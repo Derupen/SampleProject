@@ -1,0 +1,42 @@
+#ajax-load .post-block-api{
+	width: 50%;
+	padding: 0 11px;
+	display: inline-block;
+	vertical-align: top;
+}
+.thanks-box{
+	display: none;
+	letter-spacing: 0;
+	font:28px/32px "GoodOT-Bold",Verdana,sans-serif;
+	text-transform: uppercase;
+	color:#333;
+	margin-bottom: 2px;
+	padding:17px 11px 0;
+}
+.thanks-box.thankyou-msg{
+	font:15px/17px "GoodOT-Book",Verdana,sans-serif;
+	color:#000;
+	text-transform: none;
+}
+.thanks-box.thankyou-msg strong{
+	font-family: "GoodOT-Bold",Verdana,sans-serif;
+}
+.error .error-msg{
+	display: block;
+}
+@media only screen and (max-width: 991px){
+	#ajax-load .post-block-api{
+		width: 100%;
+		padding: 0;
+	}
+}
+@media only screen and (max-width: 767px){
+	#ajax-load .post-block-api{
+		width: 100%;
+		padding: 0;
+	}
+	.thanks-box{
+		font-size: 16px;
+		line-height: 22px;
+	}
+}

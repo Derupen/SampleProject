@@ -1,0 +1,301 @@
+// custom variables and override bootstrap variables
+
+@font-face {
+    font-family: 'FreigTexProBook';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/freigtexprobook-webfont.eot');
+    src: url('../fonts/freigtexprobook-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/freigtexprobook-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'freigtexprolig';
+    src: url('../fonts/freigtexprolig.eot');
+    src: url('../fonts/freigtexprolig.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/freigtexprolig.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FreigTexProBookIt';
+    src: url('../fonts/FreigTexProBookIt.eot');
+    src: url('../fonts/FreigTexProBookIt.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/FreigTexProBookIt.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'FreigTexProLigIt';
+    src: url('../fonts/FreigTexProLigIt.eot');
+    src: url('../fonts/FreigTexProLigIt.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/FreigTexProLigIt.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'GoodOT-Book';
+    font-style: normal;
+    src: url('../fonts/goodot-book-webfont.eot');
+    src: url('../fonts/goodot-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/goodot-book-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'GoodOT-Bold';
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/goodot-bold-webfont.eot');
+    src: url('../fonts/goodot-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/goodot-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'GoodOT-Book-Ital';
+    src: url('../fonts/GoodWeb-BookItalic.eot');
+    src: url('../fonts/GoodWeb-BookItalic?#iefix') format('embedded-opentype'),
+         url('../fonts/GoodWeb-BookItalic.woff') format('woff');
+} 
+
+@font-face {
+    font-family: 'GoodOT-CondBold';
+    src: url('../fonts/GoodWeb-CondBold.eot');
+    src: url('../fonts/GoodWeb-CondBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GoodWeb-CondBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'GoodOT-CondBook';
+    src: url('../fonts/GoodWeb-CondBook.eot');
+    src: url('../fonts/GoodWeb-CondBook?#iefix') format('embedded-opentype'),
+         url('../fonts/GoodWeb-CondBook.woff') format('woff');
+}
+
+
+
+/////////////// FONT VARIABLES /////////////// /////////////// /////////////// /////////////// /////////////// /////////////// FONT VARIABLES
+
+
+$good-book: 'GoodOT-Book', Verdana, sans-serif;
+$good-bold: 'GoodOT-Bold', Verdana, sans-serif;
+$good-italic: 'GoodOT-Book-Ital', Verdana, sans-serif;
+
+$goodcond-book: 'GoodOT-CondBook', Verdana, sans-serif;
+$goodcond-bold: 'GoodOT-CondBold', Verdana, sans-serif;
+
+$freight-book: 'FreigTexProBook', Georgia, serif;
+$freight-italic: 'FreigTexProBookIt', Verdana, serif;
+$freight-light: 'freigtexprolig', Georgia, serif;
+$freight-light-italic: 'FreigTexProLigIt', Georgia, serif;
+
+
+$font-families: (
+     good: (
+         book: $good-book,
+         bold: $good-bold,
+         italic: $good-italic
+     ),
+     goodcond: (
+         book: $goodcond-book,
+         bold: $goodcond-bold
+     ),
+     freight: (
+         book: $freight-book,
+         italic: $freight-italic, 
+         light: $freight-light,
+         light-italic: $freight-light-italic
+     )
+);
+
+/////////////// Call the font family modifiers /////////////// /////////////// /////////////// /////////////// Call the font family modifiers
+
+@function font-family($font-family, $weight) {
+  @return map-get(map-get($font-families, $font-family), $weight);
+}
+
+
+// Example of function:
+// a.link {
+//  font-family: font-family(freight,bold);
+// }
+
+// Scaffolding
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('../fonts/icomoon.eot?-3p01y5');
+    src:url('../fonts/icomoon.eot?#iefix-3p01y5') format('embedded-opentype'),
+        url('../fonts/icomoon.woff?-3p01y5') format('woff'),
+        url('../fonts/icomoon.ttf?-3p01y5') format('truetype'),
+        url('../fonts/icomoon.svg?-3p01y5#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check:before {
+    content: "\e608";
+}
+
+.icon-cross:before {
+    content: "\e609";
+}
+
+.icon-open:before {
+    content: "\e615";
+}
+
+.icon-opener:before {
+    content: "\e614";
+}
+
+.icon-play:before {
+    content: "\e613";
+}
+
+.icon-pause:before {
+    content: "\e60a";
+}
+
+.icon-arrow-left:before {
+    content: "\e60b";
+}
+
+.icon-arrow-right:before {
+    content: "\e60c";
+}
+
+.icon-expand:before {
+    content: "\e60d";
+}
+
+.icon-list:before {
+    content: "\e60e";
+}
+
+.icon-location:before {
+    content: "\e60f";
+}
+
+.icon-share:before {
+    content: "\e610";
+}
+
+.icon-time:before {
+    content: "\e611";
+}
+
+.icon-wave:before {
+    content: "\e612";
+}
+
+.icon-arrow:before {
+    content: "\e600";
+}
+
+.icon-facebook:before {
+    content: "\e601";
+}
+
+.icon-linkedin:before {
+    content: "\e602";
+}
+
+.icon-mail:before {
+    content: "\e603";
+}
+
+.icon-plus:before {
+    content: "\e604";
+}
+
+.icon-search:before {
+    content: "\e605";
+}
+
+.icon-twitter:before {
+    content: "\e606";
+}
+
+.icon-youtube:before {
+    content: "\e607";
+}
+
+
+$grey-light: #7e7e77;
+$maroon: #660775;
+$maroon-light: #b503b0;
+$maroon-dark: #320021;
+
+$font-family-sans-serif-condensed:  font-family(goodcond,book);
+
+$brand-success: #67981a;
+$brand-danger: #ff322e;
+
+$body-bg:#f1eee8;
+$text-color:#000;
+$link-color:#1c94d0;
+
+//Typography
+
+$font-size-base: 15px;
+$line-height-base: 1.33;
+$font-family-serif: font-family(freight,book);
+$font-family-sans-serif:  font-family(good,book);
+$font-family-base:        $font-family-serif;
+$headings-font-family:    $font-family-sans-serif-condensed;
+$font-size-h1:50px;
+
+// Components
+$padding-large-vertical:    15px;
+$padding-large-horizontal:  16px;
+
+// Buttons
+$btn-default-color:#fff;
+$btn-default-bg:#146994;
+$btn-default-border:$btn-default-bg;
+$brand-success: #67981a;
+$brand-danger: #ff322e;
+
+
+// Grid system
+$grid-gutter-width: 22px;
+
+$container-large-desktop: ((1440px + $grid-gutter-width));
+$container-desktop:((970px + $grid-gutter-width));
+$container-tablet:((727px + $grid-gutter-width));
+
+// Media queries breakpoints
+$screen-lg:1466px;
+$screen-md:992px;
+
+
+// Navbar
+
+$navbar-height:1px;
+$navbar-default-border:transparent;
+$navbar-default-bg: #81d9db;
+$navbar-border-radius:0;
+$navbar-default-link-color: #252525;
+$navbar-default-link-active-bg: #f2321a;
+$navbar-default-link-active-color: #252525;
+$navbar-default-color:#252525;
+$navbar-default-link-hover-color: #029da3;
+$navbar-default-link-hover-bg: transparent;
+
+
+
+
+
+
+$input-bg:                       transparent;
