@@ -150,6 +150,7 @@
   margin-right: -9999px; }
 
 body {
+  background: red;
   min-width: 320px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: none; }
